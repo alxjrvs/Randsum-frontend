@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
+var deploy = require('gulp-gh-pages');
 
 gulp.paths = {
   src: 'src',
@@ -10,6 +11,11 @@ gulp.paths = {
 };
 
 require('require-dir')('./gulp');
+
+gulp.task('deploy', function () {
+    return gulp.src('./dist/**/*')
+        .pipe(deploy());
+});
 
 gulp.task('default', ['clean'], function () {
     gulp.start('build');
