@@ -1,4 +1,5 @@
-angular.module "randsumFrontend", ['ngAnimate', 'ngTouch', 'ngResource', 'ui.router', 'ngMaterial']
+angular.module "randsum.roller", ['ngResource']
+angular.module "randsumFrontend", ['ngAnimate', 'ngTouch', 'ui.router', 'ngMaterial', 'randsum.roller']
   .config ($stateProvider, $urlRouterProvider) ->
     $stateProvider
       .state "home",
