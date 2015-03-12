@@ -4,7 +4,6 @@ angular.module "randsumFrontend", ['ngAnimate', 'ngTouch', 'ngResource', 'ui.rou
       .state "home",
         url: "/",
         templateUrl: "app/main/main.html",
-        controller: "MainCtrl"
+        controller: "MainController"
 
     $urlRouterProvider.otherwise '/'
-
