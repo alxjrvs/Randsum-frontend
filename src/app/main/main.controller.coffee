@@ -7,6 +7,6 @@ angular.module "randsumFrontend"
         diceSides:      20
 
       $scope.rollAgain = ->
-        RollerService.get { numberOfRolls: $scope.roll.numberOfRolls, diceSides: $scope.roll.diceSides }, (result) =>
+        RollerService.get { numberOfRolls: $scope.roll.numberOfRolls, diceSides: $scope.roll.diceSides }, (result) ->
           result = "You Rolled a #{result.total}"
           $mdToast.showSimple(result)
