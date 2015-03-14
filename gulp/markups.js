@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 
 var paths = gulp.paths;
+var autoloadPaths = gulp.autoloadPaths;
 
 var $ = require('gulp-load-plugins')();
 
@@ -11,7 +12,7 @@ gulp.task('markups', function() {
     path.extname = '.html';
   }
 
-  return gulp.src(paths.src + '/{app,components}/**/*.haml')
+  return gulp.src(paths.src + '/' + autoloadPaths +'/**/*.haml')
     .pipe($.consolidate('hamljs'))
     .on('error', function handleError(err) {
       console.error(err.toString());

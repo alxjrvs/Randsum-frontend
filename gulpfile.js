@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var deploy = require('gulp-gh-pages');
 
+gulp.autoloadPaths = '{app,components,utilities}'
 gulp.paths = {
   src: 'src',
   dist: 'dist',

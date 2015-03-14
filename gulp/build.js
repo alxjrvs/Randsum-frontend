@@ -2,6 +2,7 @@
 
 var gulp = require('gulp');
 
+var autoloadPaths = gulp.autoloadPaths;
 var paths = gulp.paths;
 
 var $ = require('gulp-load-plugins')({
@@ -10,8 +11,8 @@ var $ = require('gulp-load-plugins')({
 
 gulp.task('partials', ['markups'], function () {
   return gulp.src([
-    paths.src + '/{app,components}/**/*.html',
-    paths.tmp + '/{app,components}/**/*.html'
+    paths.src + '/' + autoloadPaths + '/**/*.html',
+    paths.tmp + '/' + autoloadPaths +'/**/*.html'
   ])
     .pipe($.minifyHtml({
       empty: true,

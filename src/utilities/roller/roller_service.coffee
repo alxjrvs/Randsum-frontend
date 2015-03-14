@@ -1,8 +1,8 @@
 class RollerService
   API = null
   @$inject: ['$resource']
-  constrcutor: (@$resource) ->
-    API = @$resource 'http://api.randsum.io/roll/:numberOfRolls/d/:diceSides'
+  constructor: (@$resource) ->
+    API = @$resource 'http://api.randsum.io/v1/roll/:numberOfRolls/d/:diceSides'
 
   roll: (numberOfRolls, diceSides) ->
     API.get { numberOfRolls: numberOfRolls, diceSides: diceSides }

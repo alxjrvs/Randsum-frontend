@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 
 var paths = gulp.paths;
+var autoloadPaths = gulp.autoloadPaths;
 
 var util = require('util');
 
@@ -36,12 +37,12 @@ gulp.task('serve', ['watch'], function () {
     paths.tmp + '/serve',
     paths.src
   ], [
-    paths.tmp + '/serve/{app,components}/**/*.css',
-    paths.tmp + '/serve/{app,components}/**/*.js',
+    paths.tmp + '/serve/' + autoloadPaths +'/**/*.css',
+    paths.tmp + '/serve/' + autoloadPaths +'/**/*.js',
     paths.src + 'src/assets/images/**/*',
     paths.tmp + '/serve/*.html',
-    paths.tmp + '/serve/{app,components}/**/*.html',
-    paths.src + '/{app,components}/**/*.html'
+    paths.tmp + '/serve/' + autoloadPaths +'/**/*.html',
+    paths.src + '/' + autoloadPaths +'/**/*.html'
   ]);
 });
 

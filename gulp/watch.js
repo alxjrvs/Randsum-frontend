@@ -3,14 +3,15 @@
 var gulp = require('gulp');
 
 var paths = gulp.paths;
+var autoloadPaths = gulp.autoloadPaths;
 
 gulp.task('watch', ['markups', 'inject'], function () {
   gulp.watch([
     paths.src + '/*.html',
-    paths.src + '/{app,components}/**/*.scss',
-    paths.src + '/{app,components}/**/*.js',
-    paths.src + '/{app,components}/**/*.coffee',
+    paths.src + '/' + autoloadPaths +'/**/*.scss',
+    paths.src + '/' + autoloadPaths +'/**/*.js',
+    paths.src + '/' + autoloadPaths +'/**/*.coffee',
     'bower.json'
   ], ['inject']);
-  gulp.watch(paths.src + '/{app,components}/**/*.haml', ['markups']);
+  gulp.watch(paths.src + '/' + autoloadPaths +'/**/*.haml', ['markups']);
 });

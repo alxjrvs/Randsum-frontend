@@ -7,6 +7,7 @@ var $ = require('gulp-load-plugins')();
 var wiredep = require('wiredep');
 
 var paths = gulp.paths;
+var autoloadPaths = gulp.autoloadPaths;
 
 function runTests (singleRun, done) {
   var bowerDeps = wiredep({
@@ -17,9 +18,9 @@ function runTests (singleRun, done) {
   });
 
   var testFiles = bowerDeps.js.concat([
-    paths.tmp + '/serve/{app,components}/**/*.js',
-    paths.src + '/{app,components}/**/*.spec.js',
-    paths.src + '/{app,components}/**/*.mock.js'
+    paths.tmp + '/serve/' + autoloadPaths +'/**/*.js',
+    paths.src + '/' + autoloadPaths +'/**/*.spec.js',
+    paths.src + '/' + autoloadPaths +'/**/*.mock.js'
   ]);
 
   gulp.src(testFiles)

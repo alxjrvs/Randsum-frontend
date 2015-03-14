@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 
 var paths = gulp.paths;
+var autoloadPaths = gulp.autoloadPaths;
 
 var $ = require('gulp-load-plugins')();
 
@@ -11,14 +12,14 @@ var wiredep = require('wiredep').stream;
 gulp.task('inject', ['styles', 'scripts'], function () {
 
   var injectStyles = gulp.src([
-    paths.tmp + '/serve/{app,components}/**/*.css',
+    paths.tmp + '/serve/' + autoloadPaths +'/**/*.css',
     '!' + paths.tmp + '/serve/app/vendor.css'
   ], { read: false });
 
   var injectScripts = gulp.src([
-    '{' + paths.src + ',' + paths.tmp + '/serve}/{app,components}/**/*.js',
-    '!' + paths.src + '/{app,components}/**/*.spec.js',
-    '!' + paths.src + '/{app,components}/**/*.mock.js'
+    '{' + paths.src + ',' + paths.tmp + '/serve}/' + autoloadPaths +'/**/*.js',
+    '!' + paths.src + '/' + autoloadPaths +'/**/*.spec.js',
+    '!' + paths.src + '/' + autoloadPaths +'/**/*.mock.js'
   ]).pipe($.angularFilesort());
 
   var injectOptions = {
