@@ -4,6 +4,10 @@ html {
   font-family: 'Roboto Slab', serif;
 }
 
+.roll-result {
+  min-height: 30px;
+}
+
 [layout=row] {
   flex-direction: row;
 }
