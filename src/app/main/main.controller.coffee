@@ -5,6 +5,15 @@ angular.module "randsumFrontend"
         numberOfRolls:  1
         diceSides:      20
 
+      $scope.docsLocked = ->
+        UnlockableService.docs.locked
+
+      $scope.aboutLocked = ->
+        UnlockableService.about.locked
+
+      $scope.codeLocked = ->
+        UnlockableService.code.locked
+
       $scope.rollAgain = ->
         $scope.result = 0
         RollerService.get { numberOfRolls: $scope.roll.numberOfRolls, diceSides: $scope.roll.diceSides }, (result) ->

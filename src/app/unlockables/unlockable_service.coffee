@@ -21,6 +21,13 @@ class UnlockableService
       if roll >= unlockable.check
         unlockable.locked = false
 
+  allLocked: () ->
+    result = true
+    angular.forEach @all(), (unlockable) ->
+      if unlockable.locked == false
+        result = false
+    result
+
   unlockAll: ->
     angular.forEach @all(), (unlockable) ->
       unlockable.locked = false

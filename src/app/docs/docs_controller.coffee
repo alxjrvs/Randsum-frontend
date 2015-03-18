@@ -1,3 +1,5 @@
 angular.module "randsumFrontend"
   .controller "DocsController",
-    ($scope) ->
+    ($scope, UnlockableService) ->
+      if UnlockableService.allLocked()
+        UnlockableService.unlockAll()

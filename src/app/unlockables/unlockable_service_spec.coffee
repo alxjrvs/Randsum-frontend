@@ -12,6 +12,17 @@ describe 'UnlockableService', ->
     service.code.locked = true
     service.about.locked = true
 
+  describe "allLocked()", ->
+    it 'returns true if all unlockables are locked', ->
+      service.docs.locked = true
+      service.code.locked = true
+      service.about.locked = true
+      expect(service.allLocked()).toEqual true
+
+    it 'returns false if any unlockables are unlocked', ->
+      service.docs.locked = false
+      expect(service.allLocked()).toEqual false
+
   describe "unlockAll()", ->
     it 'sets locked = false on each unlockable', ->
       service.unlockAll()
