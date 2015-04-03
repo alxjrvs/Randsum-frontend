@@ -18,4 +18,5 @@ angular.module "randsumFrontend"
         $scope.result = 0
         RollerService.get { numberOfRolls: $scope.roll.numberOfRolls, diceSides: $scope.roll.diceSides }, (result) ->
           $scope.result = result.total
+          UnlockableService.checkRoll $scope.result
           $mdToast.showSimple(result)
