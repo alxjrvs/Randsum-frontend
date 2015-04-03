@@ -10,7 +10,7 @@ class UnlockableService
     locked: true
 
   about:
-    check: 21
+    check: 10
     locked: true
 
   all: ->

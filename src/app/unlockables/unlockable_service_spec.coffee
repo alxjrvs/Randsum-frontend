@@ -33,7 +33,7 @@ describe 'UnlockableService', ->
   describe "checkRoll()", ->
     describe "when given too low a roll", ->
       beforeEach ->
-        service.checkRoll(10)
+        service.checkRoll(1)
 
       it "doesn't unlock anything", ->
         expect(service.docs.locked).toEqual true
@@ -42,7 +42,7 @@ describe 'UnlockableService', ->
 
     describe "when given a roll higher than an check value", ->
       beforeEach ->
-        service.checkRoll(21)
+        service.checkRoll(11)
 
       it "unlocks the relevant unlockables", ->
         expect(service.docs.locked).toEqual true
