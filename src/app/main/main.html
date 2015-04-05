@@ -1,16 +1,12 @@
 <div layout="vertical" layout-fill>
 
-  <md-content layout="roll" layout-sm="column" flex>
-    <md-button class="md-raised"ng-click="rollAgain()">Roll</md-button>
-    <md-input-container>
-      <label>How many dice?</label>
-      <input class='roll-input' ng-model="roll.numberOfRolls"></input>
-    </md-input-container>
-    <p>d</p>
-    <md-input-container>
-      <label>How many sides on your dice?</label>
-      <input class='roll-input'ng-model="roll.diceSides"></input>
-    </md-input-container>
+  <md-content layout="row" layout-sm="column" flex>
+    <md-button ng-disabled="{{loading}}" class="md-raised original-roll-button" ng-click="rollAgain()">
+      Roll
+    </md-button>
+  </md-content>
+  <md-content layout="row" layout-sm="column" flex>
+    <p>{{ result }}</p>
   </md-content>
   <footer>
   </footer>
